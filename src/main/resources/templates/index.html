@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="author" content="Maria" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <title th:text="${title}"></title>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<script src="/js/counter.js"></script>
+<button class="btn btn-light shadow mt-4" style="margin-top: 0.5em;
+        position: absolute; right: 1em;" onclick="openForm()" type="button">
+        Добавить запись
+    </button>
+<form action="/reversed" method="get">
+    <button id="btn-order" style="margin-top: 0.5em;
+            position: absolute; left: 3em;"
+            class="btn btn-primary border border-dark mt-4" onclick="changeOrder()" type="submit">
+        По убыванию
+    </button>
+</form>
+<div class="form-popup" id="myForm">
+    <form class="form-container" action="/post" method="post">
+        <p><b>Добавить запись</b></p>
+        <p>Текст</p>
+        <textarea name="text_entry" rows="10" cols="45" placeholder="Введите полный текст" class="form-control"></textarea>
+        <div class="d-flex flex-row m-1">
+            <button type="submit" class="btn btn-light">Добавить</button>
+            <button type="button" class="btn btn-light" onclick="closeForm()">Закрыть</button>
+        </div>
+    </form>
+</div>
+<div class="form-popup" id="myFormEdit">
+    <form class="form-container" id="form-action-dairy" action="/edit/" method="post">
+        <p><b>Изменить запись</b></p>
+        <p>Текст</p>
+        <textarea name="text_entry" rows="10" cols="45" placeholder="Введите полный текст" class="form-control" id="txt-a"></textarea>
+        <div class="d-flex flex-row m-1">
+            <button type="submit" class="btn btn-light">Изменить</button>
+            <button type="button" class="btn btn-light" onclick="closeForm()">Закрыть</button>
+        </div>
+    </form>
+</div>
+        <div class="bg-info pt-5">
+            <article class="p-t-5" id="cont_post">
+                <div th:insert="blocks/ascending :: ascending"></div>
+    </article>
+        </div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+
+</html>

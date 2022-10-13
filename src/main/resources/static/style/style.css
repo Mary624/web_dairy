@@ -1,0 +1,117 @@
+/*:root {*/
+/*    --header-height: 7em;*/
+/*    font-size: 20px;*/
+/*    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+/*    background: url(media/heart.svg.png) 10px 20px repeat-y;*/
+/*    background-size: 180px 180px;*/
+/*}*/
+
+/*h1 {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+/*.container {*/
+/*    padding: 0 2em;*/
+/*}*/
+
+/*nav a {*/
+/*    text-decoration: none;*/
+/*    border: thick double;*/
+/*    color:rgb(80, 59, 59);*/
+/*}*/
+
+nav a:hover {
+    background-color: #fff4d4;
+}
+nav a:active {
+    background-color: #fff0f0;
+}
+
+/*header {*/
+/*    background-color: #ffe4c4;*/
+/*    padding-top: 1em;*/
+/*    font-family:Arial, Helvetica, sans-serif;*/
+/*    color: rgb(80, 59, 59);*/
+/*    margin-top: 1em;*/
+/*    height: var(--header-height);*/
+/*    border: 4mm ridge;*/
+/*}*/
+
+/*header nav {*/
+/*    text-align: right;*/
+/*    padding-right: 1em;*/
+/*}*/
+
+/*header:hover {*/
+/*    background-color: #f0e0c0;*/
+/*}*/
+
+/*aside {*/
+/*    background: rgb(249, 230, 191);*/
+/*    padding: 10px;*/
+/*    width: 200px;*/
+/*    margin-left: auto; */
+/*    border-radius: 15px;   */
+/*    display: block;*/
+/*}*/
+
+
+/*h2 {*/
+/*    padding: 0 200px;*/
+/*} */
+
+/*section {*/
+/*    border: 2px solid rgb(203, 197, 163);*/
+/*    border-radius: 15px;*/
+/*    margin-left: 200px;*/
+/*    background-color: rgb(254, 248, 241);*/
+/*}*/
+
+/*div.txt {*/
+/*    padding-left: 2em;*/
+/*    !* display: -webkit-flex; *!*/
+/*    display: flex;*/
+/*}*/
+
+/*article section{*/
+/*    margin-top: 20px;*/
+/*    padding-left: 10px;*/
+/*}*/
+
+/*img {*/
+/*    width: 600px;*/
+/*}*/
+
+.form-popup {
+    display: none;
+    position: fixed;
+    margin-top: 5px;
+    right: 2em;
+    z-index: 9;
+}
+
+.form-container {
+    /*border: 2px solid rgb(203, 197, 163);*/
+    border-radius: 15px;
+    max-width: 350px;
+    padding: 10px;
+    background-color:#0dcaf0;
+    color: #fff0f0;
+}
+
+.form-container textarea {
+    max-width: 300px;
+}
+
+#open-button {
+    margin-top: 0.5em;
+    position: absolute;
+    right: 1em;
+    background-color: #0dcaf0;
+    /*border: thick double rgb(203, 197, 163);*/
+    color: #fff0f0;
+    border-radius: 15px;
+    margin-right: 0em;
+}
+
