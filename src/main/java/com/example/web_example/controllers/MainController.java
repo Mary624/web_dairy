@@ -13,6 +13,11 @@ public class MainController {
         return "author";
     }
 
+    @GetMapping("/login")
+    public String login(Model model){
+        return "redirect:auth/login";
+    }
+
     @GetMapping("/plans")
     public String plans(Model model){
         model.addAttribute("title", "Планы");

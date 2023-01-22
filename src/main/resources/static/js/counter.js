@@ -1,3 +1,12 @@
+function changeDate(e){
+    var button = document.getElementById('button');
+    var href = '/page/1?sort-field=id&sort-dir=asc';
+    var inputFrom = document.getElementById('from');
+    var inputTo = document.getElementById('to');
+    var str = href + '&date-start='
+        + inputFrom.value + '&date-finish=' + inputTo.value
+    button.setAttribute('href', str);
+}
 
 function openForm() {
     document.getElementById("myForm").style.display = 'block';

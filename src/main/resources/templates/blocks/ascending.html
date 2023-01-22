@@ -1,5 +1,5 @@
 <div th:fragment="ascending" class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom text-white">Дни</h2>
+    <h2 class="pb-2 border-bottom text-white" th:text="'Дни. Страница ' + ${currentPage}"/>
 <div th:each="el,iter : ${dairy_entries}" class="row align-items-md-center g-5 py-5 model-content rounded-4 shadow m-5 bg-white">
     <div class="col-10 d-flex flex-column align-items-start gap-2">
         <h3 th:text="'Запись ' + ${iter.index + 1}" class="fw-bold"></h3>

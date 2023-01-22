@@ -13,17 +13,6 @@
 <body>
 <header th:insert="blocks/header :: header"></header>
 <script src="/js/counter.js"></script>
-<button class="btn btn-light shadow mt-4" style="margin-top: 0.5em;
-        position: absolute; right: 1em;" onclick="openForm()" type="button">
-        Добавить запись
-    </button>
-<form action="/reversed" method="get">
-    <button id="btn-order" style="margin-top: 0.5em;
-            position: absolute; left: 3em;"
-            class="btn btn-primary border border-dark mt-4" onclick="changeOrder()" type="submit">
-        По убыванию
-    </button>
-</form>
 <div class="form-popup" id="myForm">
     <form class="form-container" action="/post" method="post">
         <p><b>Добавить запись</b></p>
@@ -46,10 +35,45 @@
         </div>
     </form>
 </div>
-        <div class="bg-info pt-5">
+    <div class="bg-info pt-2">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25%;">
+        <div id="btn-order" style="grid-column: 1;
+grid-row: 1;
+left: 3em;"
+             class="btn btn-primary border border-dark">
+            <a style="text-decoration: none; color: white;"
+               th:href="@{'/page/' + ${currentPage} + '?sort-field=id&sort-dir=' + ${reverseSortDir} + '&date-start=' + ${dateStart} + '&date-finish=' + ${dateFinish}}">
+                В обратном порядке
+            </a>
+        </div>
+        <div style="grid-column: 2;
+grid-row: 1; position: center; width: 350px;" class="d-flex flex-row">
+        <input type="date" th:value="${dateStart}" id="from" class="form-control" onchange="changeDate(event);">
+        <input type="date" th:value="${dateFinish}" id="to" class="form-control" onchange="changeDate(event);">
+        <div class="btn btn-light">
+            <a id="button" href="/page/1?sort-field=id&sort-dir=asc"
+               style="text-decoration: none; color: black;">Применить</a>
+        </div>
+        </div>
+        <button class="btn btn-light shadow" style="grid-column: 3;
+grid-row: 1;
+right: 1em;" onclick="openForm()" type="button">
+            Добавить запись
+        </button>
+    </div>
             <article class="p-t-5" id="cont_post">
                 <div th:insert="blocks/ascending :: ascending"></div>
     </article>
+            <div th:if="${totalPages} != 1" class="btn btn-primary border border-dark mb-1">
+                <a style="text-decoration: none; color: white" th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1} + '?sort-field=' + ${sortField} + '&sort-dir=' + ${sortDir}
+                + '&date-start=' + ${dateStart} + '&date-finish=' + ${dateFinish}}">
+                    <span>Next</span>
+                </a>
+                <a style="text-decoration: none; color: white" th:if="${currentPage > 1}" th:href="@{'/page/' + ${currentPage - 1} + '?sort-field=' + ${sortField} + '&sort-dir=' + ${sortDir}
+                + '&date-start=' + ${dateStart} + '&date-finish=' + ${dateFinish}}">
+                    <span>Previous</span>
+                </a>
+            </div>
         </div>
 <div th:insert="blocks/footer :: footer"></div>
 </body>
