@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>th:text="${title}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<style>
+    label{
+        margin-bottom: 15px;
+    }
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px;
+        padding-top: 3px;
+    }
+    .form-control {
+        height: auto!important;
+        padding: 8px 12px !important;
+    }
+    .input-group  input {
+        height: 40px;
+    }
+    #button {
+        color: #666;
+    }
+    #main-form{
+        margin-top: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px 40px;
+        background:#009edf;
+        color: #FFF;
+        text-shadow: none;
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    }
+    span.input-group-addon i {
+        color: #009edf;
+        font-size: 17px;
+    }
+</style>
+<header th:insert="blocks/header :: header"></header>
+<div class="modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow"  id="main-form">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Sign up for free</h1>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <form class="" action="/do_sign_up" method="post">
+                    <div class="input-group">
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control rounded-3" name="first_name" id="floatingFirstName" placeholder="Ivan">
+                            <label for="floatingFirstName">First name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control rounded-3" name="last_name" id="floatingLastName" placeholder="Ivanov">
+                            <label for="floatingLastName">Last name</label>
+                        </div>
+                    </div>
+                    <button id="button" class="w-100 mb-2 btn btn-outline-dark btn-lg rounded-3"
+                            data-toggle="button" aria-pressed="false" autocomplete="off" type="submit">Sign up</button>
+                    <small class="">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
